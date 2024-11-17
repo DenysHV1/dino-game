@@ -1,0 +1,55 @@
+body{
+  background-color: rgba(0, 0, 0, 0.247);
+}
+
+.game{
+  position: relative;
+  width: 600px;
+  height: 200px;
+  border-bottom: 3px solid black;
+  background-color: rgba(0, 0, 255, 0.151);
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.game.bg1{
+  background: -webkit-linear-gradient(180deg,#4cd65c,#6bdc2e,#9afb4b); /* Chrome 10-25, Safari 5.1-6 */ background: linear-gradient(180deg,#4cd65c,#6bdc2e,#9afb4b); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.game.bg2{
+  background: -webkit-linear-gradient(90deg,#00bff0,#00d8eb); /* Chrome 10-25, Safari 5.1-6 */ background: linear-gradient(90deg,#00bff0,#00d8eb); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.game.bg3{
+  background: -webkit-linear-gradient(90deg,#d357fe,#be38f3,#7a219e); /* Chrome 10-25, Safari 5.1-6 */ background: linear-gradient(90deg,#d357fe,#be38f3,#7a219e); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.game.bg4{
+  background: -webkit-linear-gradient(90deg,#f10e42,#d8005a,#b7006b); /* Chrome 10-25, Safari 5.1-6 */ background: linear-gradient(90deg,#f10e42,#d8005a,#b7006b); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.startBtn{
+  position: relative;
+  top: 80px;
+}
+
+.timer{
+  position: relative;
+  top: 45px;
+  left: 300px;
+}
+
+.game-over{
+  position: absolute;
+  top: 91%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-weight: 600;
+  font-size: 48px;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  margin: 0;
+  background-color: rgba(0, 0, 0, 0.589);
+}
+
