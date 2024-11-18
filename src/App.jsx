@@ -105,13 +105,13 @@ function App() {
       }
     }, 10);
 
-    if (cactusPosition < 50 && cactusPosition > 0 && dinoPosition >= 140) {
+    if (cactusPosition < 50 && cactusPosition > 0 && dinoPosition >= 145) {
       setMove(false);
       setGameOverModal(true);
       resetGame();
     }
 
-    if (cactus2Position < 50 && cactus2Position > 0 && dinoPosition >= 140) {
+    if (cactus2Position < 50 && cactus2Position > 0 && dinoPosition >= 145) {
       setMove(false);
       setGameOverModal(true);
       resetGame();
