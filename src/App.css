@@ -1,8 +1,8 @@
-body{
+body {
   background-color: rgba(0, 0, 0, 0.247);
 }
 
-.game{
+.game {
   position: relative;
   width: 600px;
   height: 200px;
@@ -12,44 +12,142 @@ body{
   overflow: hidden;
 }
 
-.game.bg1{
-  background: -webkit-linear-gradient(180deg,#4cd65c,#6bdc2e,#9afb4b); /* Chrome 10-25, Safari 5.1-6 */ background: linear-gradient(180deg,#4cd65c,#6bdc2e,#9afb4b); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+.game.bg1 {
+  background: -webkit-linear-gradient(
+    180deg,
+    #4cd65c,
+    #6bdc2e,
+    #9afb4b
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    180deg,
+    #4cd65c,
+    #6bdc2e,
+    #9afb4b
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
-.game.bg2{
-  background: -webkit-linear-gradient(90deg,#00bff0,#00d8eb); /* Chrome 10-25, Safari 5.1-6 */ background: linear-gradient(90deg,#00bff0,#00d8eb); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+.game.bg2 {
+  background: -webkit-linear-gradient(
+    90deg,
+    #00bff0,
+    #00d8eb
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    90deg,
+    #00bff0,
+    #00d8eb
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
-.game.bg3{
-  background: -webkit-linear-gradient(90deg,#d357fe,#be38f3,#7a219e); /* Chrome 10-25, Safari 5.1-6 */ background: linear-gradient(90deg,#d357fe,#be38f3,#7a219e); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+.game.bg3 {
+  background: -webkit-linear-gradient(
+    90deg,
+    #d357fe,
+    #be38f3,
+    #7a219e
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    90deg,
+    #d357fe,
+    #be38f3,
+    #7a219e
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
-.game.bg4{
-  background: -webkit-linear-gradient(90deg,#f10e42,#d8005a,#b7006b); /* Chrome 10-25, Safari 5.1-6 */ background: linear-gradient(90deg,#f10e42,#d8005a,#b7006b); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+.game.bg4 {
+  background: -webkit-linear-gradient(
+    90deg,
+    #f10e42,
+    #d8005a,
+    #b7006b
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    90deg,
+    #f10e42,
+    #d8005a,
+    #b7006b
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
-.startBtn{
+.startBtn {
   position: relative;
-  top: 80px;
+  top: 107px;
+  left: -1px;
+  background-color: #4caf50;
+  border: none;
+  color: white;
+  padding: 5px 20px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 20px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  border-radius: 4px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.timer{
+.startBtn:hover {
+  background-color: white;
+  color: #4caf50;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.startBtn:active {
+  background-color: #45a049;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.timer {
   position: relative;
-  top: 45px;
-  left: 300px;
+  top: 58px;
+  left: 285px;
+  font-size: 20px;
+  font-weight: 600;
+  margin: 0;
+  display: flex;
+  color: #ffffff;
+  text-shadow: 0 0 5px #00ff00, 0 0 5px #00ff00, 0 0 5px #008000,
+    0 0 5px #00ff00;
 }
 
-.game-over{
+.game-over {
   position: absolute;
-  top: 91%;
+  top: 105%;
   left: 50%;
   transform: translate(-50%, -50%);
   font-weight: 600;
   font-size: 48px;
   width: 100%;
-  height: 100%;
+  height: 102%;
   text-align: center;
   margin: 0;
   background-color: rgba(0, 0, 0, 0.589);
+  padding-top: 70px;
 }
 
+.lvl {
+  position: relative;
+  top: 80px;
+  left: 87px;
+  font-size: 20px;
+  font-weight: 600;
+  margin: 0;
+  display: flex;
+  color: #ffffff;
+  text-shadow: 0 0 5px #00ff00, 0 0 5px #00ff00, 0 0 5px #008000,
+    0 0 5px #00ff00;
+}
+
+.record {
+  position: relative;
+  top: 35px;
+  left: 465px;
+  font-size: 20px;
+  font-weight: 600;
+  margin: 0;
+  display: flex;
+  color: #ffffff;
+  text-shadow: 0 0 5px #00ff00, 0 0 5px #00ff00, 0 0 5px #008000,
+    0 0 5px #00ff00;
+}

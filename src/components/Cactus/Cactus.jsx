@@ -1,17 +1,12 @@
-import css from "./Cactus.module.css";
+import "./cactus.css";
 
-const Cactus = ({ move, cactusRef, speed}) => {
-
-  // const style = {
-  //   animationDuration: `2s`,
-  //   animationName: "move",
-  //   animationTimingFunction: "linear",
-  //   animationIterationCount: "infinite",
-  // };
-
+const Cactus = ({ move, cactusRef, speed }) => {
   return (
     <>
-      <div ref={cactusRef} className={move ? `${css.cactus}` : css.cactusStop}></div>
+      <div
+        ref={cactusRef}
+        className={move ? `cactus ${speed}` : "cactusStop"}
+      ></div>
     </>
   );
 };

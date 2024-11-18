@@ -10,12 +10,16 @@
   background-repeat: no-repeat;
 }
 
-.dino:focus{
+.dino:focus {
   outline: none;
 }
 
 .jump {
   animation: onJump 0.3s linear;
+}
+
+.jump2 {
+  animation: onJump2 0.4s linear;
 }
 
 @keyframes onJump {
@@ -30,6 +34,24 @@
   }
   75% {
     top: 110px;
+  }
+  100% {
+    top: 150px;
+  }
+}
+
+@keyframes onJump2 {
+  0% {
+    top: 150px;
+  }
+  25% {
+    top: 90px;
+  }
+  50% {
+    top: 40px;
+  }
+  75% {
+    top: 90px;
   }
   100% {
     top: 150px;

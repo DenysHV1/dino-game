@@ -1,0 +1,50 @@
+.cactus {
+  position: relative;
+  top: 120px;
+  left: 550px;
+  width: 30px;
+  height: 30px;
+  background-image: url(./cactus.png);
+  background-size: 30px 30px;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 0;
+  margin: 0;
+}
+
+.cactus.speed1 {
+  animation: move 1.5s infinite linear;
+}
+
+.cactus.speed2 {
+  animation: move 1.1s infinite linear;
+}
+
+.cactus.speed3 {
+  animation: move 0.9s infinite linear;
+}
+
+.cactus.speed4 {
+  animation: move 0.7s infinite linear;
+}
+
+.cactusStop {
+  position: relative;
+  top: 120px;
+  left: 550px;
+  width: 35px;
+  height: 35px;
+  background-image: url(./cactus.png);
+  background-size: 30px 30px;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+@keyframes move {
+  0% {
+    left: 550px;
+  }
+  100% {
+    left: -30px;
+  }
+}

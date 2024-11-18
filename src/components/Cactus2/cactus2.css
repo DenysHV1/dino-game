@@ -1,0 +1,53 @@
+.cactus2 {
+  position: absolute;
+  top: 272px;
+  left: 700px;
+  width: 30px;
+  height: 30px;
+  background-image: url(./cactus2.png);
+  background-size: 30px 30px;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 0;
+  margin: 0;
+}
+
+.cactus2.speed1 {
+  animation: move2 1.9s infinite linear;
+}
+
+.cactus2.speed2 {
+  animation: move2 1.5s infinite linear;
+}
+
+.cactus2.speed3 {
+  animation: move2 1.3s infinite linear;
+}
+
+.cactus2.speed4 {
+  animation: move2 1.1s infinite linear;
+}
+
+.cactus2Stop {
+  position: absolute;
+  top: 272px;
+  left: 700px;
+  width: 35px;
+  height: 35px;
+  background-image: url(./cactus2.png);
+  background-size: 30px 30px;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+@keyframes move2 {
+  0% {
+    left: 700px;
+  }
+  50% {
+    left: 350px;
+  }
+  100% {
+    left: -30px;
+  }
+}
