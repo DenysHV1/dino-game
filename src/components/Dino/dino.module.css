@@ -15,7 +15,7 @@
 }
 
 .jump {
-  animation: onJump 0.3s linear;
+  animation: onJump 0.5s linear;
 }
 
 .jump2 {
@@ -27,13 +27,13 @@
     top: 150px;
   }
   25% {
-    top: 110px;
+    top: 90px;
   }
   50% {
-    top: 75px;
+    top: 60px;
   }
   75% {
-    top: 110px;
+    top: 90px;
   }
   100% {
     top: 150px;

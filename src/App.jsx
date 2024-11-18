@@ -29,12 +29,21 @@ function App() {
   const cactusRef = useRef(null);
   const cactusRef2 = useRef(null);
 
+  const resetGame = () => {
+    setBackground("");
+    setCountInterval(0);
+    setSpeed("speed1");
+    setLvl("Lvl: 1");
+    setDinoPosition(0);
+    setCactusPosition(0);
+    setCactus2Position(0);
+  };
+
   //START/STOP
   const handlerToggleMove = () => {
     setMove(!move);
     setGameOverModal(false);
-    setBackground("");
-    setCountInterval(0);
+    resetGame();
     if (dinoRef.current) {
       dinoRef.current.focus();
     }
@@ -68,11 +77,11 @@ function App() {
       setLvl("Lvl: infinity");
     } else {
       setBackground("");
+      setLvl("Lvl: 1");
     }
 
     return () => clearTimeout(timer);
-  }, [countInterval, move, record]);
-
+  }, [countInterval, move, record, speed]);
   //game over settings
   useEffect(() => {
     const dino = parseInt(
@@ -97,17 +106,15 @@ function App() {
     }, 10);
 
     if (cactusPosition < 50 && cactusPosition > 0 && dinoPosition >= 140) {
-      setCountInterval(0);
-      setBackground("");
       setMove(false);
       setGameOverModal(true);
+      resetGame();
     }
 
     if (cactus2Position < 50 && cactus2Position > 0 && dinoPosition >= 140) {
-      setCountInterval(0);
-      setBackground("");
       setMove(false);
       setGameOverModal(true);
+      resetGame();
     }
 
     return () => clearTimeout(time);
