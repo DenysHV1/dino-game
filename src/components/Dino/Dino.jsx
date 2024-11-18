@@ -1,10 +1,8 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 
 import s from "./dino.module.css";
 
-const Dino = ({ dinoRef, move }) => {
-  const [dinoClass, setDinoClass] = useState(false);
-
+const Dino = ({ dinoRef, move, dinoClass, setDinoClass }) => {
   const handlerKeyDown = (e) => {
     e.preventDefault();
     if (e.key === " " || e.code === "Space") {
@@ -24,7 +22,7 @@ const Dino = ({ dinoRef, move }) => {
     if (dinoRef.current) {
       dinoRef.current.focus();
     }
-  }, [dinoClass, dinoRef]);
+  }, [dinoClass, dinoRef, setDinoClass]);
 
   return (
     <div

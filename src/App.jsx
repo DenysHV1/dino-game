@@ -9,11 +9,12 @@ function App() {
   const [move, setMove] = useState(false);
   const [countInterval, setCountInterval] = useState(0);
   const [gameOverModal, setGameOverModal] = useState(false);
+  const [dinoClass, setDinoClass] = useState(false);
 
   //events
   const [background, setBackground] = useState("");
   const [speed, setSpeed] = useState(`speed1`);
-  const [lvl, setLvl] = useState("Lvl: 1");
+  const [lvl, setLvl] = useState("easy Lvl: 1");
   const [record, setRecord] = useState(() => {
     const saveRecord = localStorage.getItem("record");
     return saveRecord ? JSON.parse(saveRecord) : 0;
@@ -33,7 +34,7 @@ function App() {
     setBackground("");
     setCountInterval(0);
     setSpeed("speed1");
-    setLvl("Lvl: 1");
+    setLvl("easy Lvl: 1");
     setDinoPosition(0);
     setCactusPosition(0);
     setCactus2Position(0);
@@ -62,22 +63,22 @@ function App() {
 
     if (countInterval > 10 && countInterval < 60) {
       setBackground("linear-gradient(180deg,#4cd65c,#6bdc2e,#9afb4b)");
-      setLvl("Lvl: 2");
+      setLvl("middle Lvl: 2");
     } else if (countInterval >= 60 && countInterval < 120) {
       setBackground("linear-gradient(90deg,#00bff0,#00d8eb)");
       setSpeed("speed2");
-      setLvl("Lvl: 3");
+      setLvl("hard Lvl: 3");
     } else if (countInterval >= 120 && countInterval < 300) {
       setBackground("linear-gradient(90deg,#d357fe,#be38f3,#7a219e)");
       setSpeed("speed3");
-      setLvl("Lvl: 4");
+      setLvl("very hard Lvl: 4");
     } else if (countInterval >= 300) {
       setBackground("linear-gradient(90deg,#f10e42,#d8005a,#b7006b)");
       setSpeed("speed4");
-      setLvl("Lvl: infinity");
+      setLvl("impossible Lvl: infinity");
     } else {
       setBackground("");
-      setLvl("Lvl: 1");
+      setLvl("easy Lvl: 1");
     }
 
     return () => clearTimeout(timer);
@@ -120,8 +121,16 @@ function App() {
     return () => clearTimeout(time);
   }, [dinoPosition, cactusPosition, countInterval, cactus2Position]);
 
+  // const handlerOnClickToJump = () => {
+  //   ;
+  // }
+
   return (
-    <div className="game" style={{ backgroundImage: background }}>
+    <div
+      className="game"
+      style={{ backgroundImage: background }}
+      onClick={() => setDinoClass(true)}
+    >
       {gameOverModal && <p className="game-over">GAME OVER!</p>}
       <button
         className="startBtn"
@@ -134,7 +143,12 @@ function App() {
       <p className="lvl">{lvl}</p>
       <p className="timer">{countInterval}</p>
       <p className="record">Record: {record}</p>
-      <Dino dinoRef={dinoRef} move={move} />
+      <Dino
+        dinoRef={dinoRef}
+        move={move}
+        dinoClass={dinoClass}
+        setDinoClass={setDinoClass}
+      />
       <Cactus move={move} cactusRef={cactusRef} speed={speed} />
       {countInterval > 10 && (
         <Cactus2 move={move} cactusRef2={cactusRef2} speed={speed} />
