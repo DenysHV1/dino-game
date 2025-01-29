@@ -1,9 +1,16 @@
-import { useEffect } from "react";
+import { FC, KeyboardEvent, useEffect } from "react";
 
 import s from "./dino.module.css";
 
-const Dino = ({ dinoRef, move, dinoClass, setDinoClass }) => {
-  const handlerKeyDown = (e) => {
+interface IDinoProps {
+  dinoRef: React.RefObject<HTMLDivElement>;
+  move: boolean;
+  dinoClass: boolean;
+  setDinoClass: React.Dispatch<React.SetStateAction<boolean>>;
+}
+
+const Dino: FC<IDinoProps> = ({ dinoRef, move, dinoClass, setDinoClass }) => {
+  const handlerKeyDown = (e: KeyboardEvent<HTMLDivElement>): void => {
     e.preventDefault();
     if (e.key === " " || e.code === "Space") {
       setDinoClass(true);
@@ -26,7 +33,7 @@ const Dino = ({ dinoRef, move, dinoClass, setDinoClass }) => {
 
   return (
     <div
-      tabIndex="1"
+      tabIndex={1}
       ref={dinoRef}
       onKeyDown={handlerKeyDown}
       className={dinoClass || !move ? `${s.dino} ${s.jump}` : `${s.dino}`}

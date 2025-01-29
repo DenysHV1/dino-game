@@ -1,34 +1,35 @@
-import { useEffect, useRef, useState } from "react";
+import { FC, useEffect, useRef, useState } from "react";
 import "./App.css";
 import Cactus from "./components/Cactus/Cactus";
 import Dino from "./components/Dino/Dino";
 import Cactus2 from "./components/Cactus2/Cactus2";
 
-function App() {
+const App: FC = () => {
   //main
-  const [move, setMove] = useState(false);
-  const [countInterval, setCountInterval] = useState(0);
-  const [gameOverModal, setGameOverModal] = useState(false);
-  const [dinoClass, setDinoClass] = useState(false);
+  const [move, setMove] = useState<boolean>(false);
+  const [countInterval, setCountInterval] = useState<number>(0);
+  const [gameOverModal, setGameOverModal] = useState<boolean>(false);
+  const [dinoClass, setDinoClass] = useState<boolean>(false);
 
   //events
-  const [background, setBackground] = useState("");
-  const [speed, setSpeed] = useState(`speed1`);
-  const [lvl, setLvl] = useState("easy Lvl: 1");
-  const [record, setRecord] = useState(() => {
+  const [background, setBackground] = useState<string>("");
+  const [speed, setSpeed] = useState<string>(`speed1`);
+  const [lvl, setLvl] = useState<string>("easy Lvl: 1");
+
+  const [record, setRecord] = useState<number>(() => {
     const saveRecord = localStorage.getItem("record");
     return saveRecord ? JSON.parse(saveRecord) : 0;
   });
 
   //positions el
-  const [dinoPosition, setDinoPosition] = useState(0);
-  const [cactusPosition, setCactusPosition] = useState(0);
-  const [cactus2Position, setCactus2Position] = useState(0);
+  const [dinoPosition, setDinoPosition] = useState<number>(0);
+  const [cactusPosition, setCactusPosition] = useState<number>(0);
+  const [cactus2Position, setCactus2Position] = useState<number>(0);
 
   //elements
-  const dinoRef = useRef(null);
-  const cactusRef = useRef(null);
-  const cactusRef2 = useRef(null);
+  const dinoRef = useRef<HTMLDivElement>(null);
+  const cactusRef = useRef<HTMLDivElement>(null);
+  const cactusRef2 = useRef<HTMLDivElement>(null);
 
   const resetGame = () => {
     setBackground("");
@@ -85,6 +86,8 @@ function App() {
   }, [countInterval, move, record, speed]);
   //game over settings
   useEffect(() => {
+    if (!dinoRef.current || !cactusRef.current || !cactusRef2.current) return;
+
     const dino = parseInt(
       window.getComputedStyle(dinoRef.current).getPropertyValue("top")
     );
@@ -121,9 +124,6 @@ function App() {
     return () => clearTimeout(time);
   }, [dinoPosition, cactusPosition, countInterval, cactus2Position]);
 
-  // const handlerOnClickToJump = () => {
-  //   ;
-  // }
 
   return (
     <div
@@ -155,6 +155,6 @@ function App() {
       )}
     </div>
   );
-}
+};
 
 export default App;
